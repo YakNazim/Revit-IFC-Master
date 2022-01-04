@@ -687,7 +687,7 @@
     <value>How do I specify an export setup?</value>
   </data>
   <data name="ExportIFC" xml:space="preserve">
-    <value>Export IFC</value>
+    <value>Revit =&gt; IFC ++</value>
   </data>
   <data name="ER_Architecture" xml:space="preserve">
     <value>Architectural Reference Exchange</value>

@@ -646,7 +646,7 @@ namespace BIM.IFC.Export.UI.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Export IFC.
+        ///   Looks up a localized string similar to Revit =&gt; IFC ++.
         /// </summary>
         public static string ExportIFC {
             get {

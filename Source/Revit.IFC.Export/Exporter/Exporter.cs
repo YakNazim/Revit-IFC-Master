@@ -40,6 +40,7 @@ using Autodesk.Revit.DB.ExternalService;
 using Revit.IFC.Export.Properties;
 using System.Reflection;
 using Autodesk.Revit.DB.Steel;
+using Autodesk.Revit.UI;
 
 namespace Revit.IFC.Export.Exporter
 {
@@ -82,6 +83,9 @@ namespace Revit.IFC.Export.Exporter
       /// <param name="eventArgs">The event args.</param>
       private void OnApplicationInitialized(object sender, EventArgs eventArgs)
       {
+
+         
+             
          SingleServerService service = ExternalServiceRegistry.GetService(ExternalServices.BuiltInExternalServices.IFCExporterService) as SingleServerService;
          if (service != null)
          {
@@ -91,7 +95,12 @@ namespace Revit.IFC.Export.Exporter
          }
          // TODO log this failure accordingly
       }
+
+
+
    }
+
+
 
    /// <summary>
    /// This class implements the method of interface IExporterIFC to perform an export to IFC.
@@ -120,14 +129,11 @@ namespace Revit.IFC.Export.Exporter
 
       protected QuantitiesToExport m_QuantitiesToExport = null;
 
-      #region IExporterIFC Members
+        #region IExporterIFC Members
 
-      /// <summary>
-      /// Create the list of element export routines.  Each routine will export a subset of Revit elements,
-      /// allowing for a choice of which elements are exported, and in what order.
-      /// This routine is protected, so it could be overriden by an Exporter class that inherits from this base class.
-      /// </summary>
-      protected virtual void InitializeElementExporters()
+        
+
+        protected virtual void InitializeElementExporters()
       {
          // Allow another function to potentially add exporters before ExportSpatialElements.
          if (m_ElementExporter == null)
@@ -159,6 +165,8 @@ namespace Revit.IFC.Export.Exporter
          try
          {
             BeginExport(exporterIFC, document, filterView);
+
+            
 
             ParamExprListener.ResetParamExprInternalDicts();
             InitializeElementExporters();
@@ -1053,6 +1061,7 @@ namespace Revit.IFC.Export.Exporter
       /// </summary>
       protected virtual void InitializePropertySets()
       {
+          
          ExporterInitializer.InitPropertySets(m_PropertySetsToExport);
       }
 
