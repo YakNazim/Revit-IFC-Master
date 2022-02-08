@@ -82,6 +82,7 @@
     <Compile Include="Exporter\CeilingExporter.cs" />
     <Compile Include="Exporter\ConnectorExporter.cs" />
     <Compile Include="Exporter\CurtainSystemExporter.cs" />
+    <Compile Include="Exporter\CustomExporter.cs" />
     <Compile Include="Exporter\DoorWindowExporter.cs" />
     <Compile Include="Exporter\DuctInsulationExporter.cs" />
     <Compile Include="Exporter\DuctLiningExporter.cs" />

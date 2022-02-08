@@ -42,6 +42,7 @@ using System.Reflection;
 using Autodesk.Revit.DB.Steel;
 using Autodesk.Revit.UI;
 
+
 namespace Revit.IFC.Export.Exporter
 {
    /// <summary>
@@ -122,16 +123,16 @@ namespace Revit.IFC.Export.Exporter
       // Allow a derived class to add property sets.
       public delegate void PropertySetsToExport(IList<IList<PropertySetDescription>> propertySets);
 
-      protected PropertySetsToExport m_PropertySetsToExport = null;
+        
+      //protected PropertySetsToExport m_PropertySetsToExport = null;
+      protected PropertySetsToExport m_PropertySetsToExport = CustomExporter.InitCustomPropertySet;
 
       // Allow a derived class to add quantities.
       public delegate void QuantitiesToExport(IList<IList<QuantityDescription>> propertySets);
 
       protected QuantitiesToExport m_QuantitiesToExport = null;
 
-        #region IExporterIFC Members
-
-        
+      #region IExporterIFC Members         
 
         protected virtual void InitializeElementExporters()
       {
