@@ -18,6 +18,9 @@ using System.Threading.Tasks;
 //    typeof(Toolkit.IFC4.PsetManufacturerTypeInformation_AssemblyPlace)));
 //}
 
+/// <summary>
+/// This class defines a method - used as a delegate - to process custom PSets
+/// </summary>
 
 namespace Revit.IFC.Export.Exporter
 {
@@ -46,7 +49,7 @@ namespace Revit.IFC.Export.Exporter
             // Append the propertySets list
             propertySets.Add(commonPropertySets);
 
-            TaskDialog.Show("Success", "Export completed succesfuly ! ");
+            TaskDialog.Show("Success", "Custom exporter initiated ! ");
 
         }
 
@@ -98,8 +101,8 @@ namespace Revit.IFC.Export.Exporter
             propertySet.Name = "Pset_SpaceFireSafetyRequirements";
             propertySet.EntityTypes.Add(IFCEntityType.IfcSpace);
 
-            ifcPSE = new PropertySetEntry("DetectionAlarmTime");
-            ifcPSE.PropertyName = "DetectionAlarmTime";
+            ifcPSE = new PropertySetEntry("AlarmTime");
+            ifcPSE.PropertyName = "AlarmTime";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
@@ -119,24 +122,24 @@ namespace Revit.IFC.Export.Exporter
             propertySet.EntityTypes.Add(IFCEntityType.IfcProject);
 
 
-            ifcPSE = new PropertySetEntry("SoftwareName");
-            ifcPSE.PropertyName = "SoftwareName";
+            ifcPSE = new PropertySetEntry("EvacuationModelName");
+            ifcPSE.PropertyName = "EvacuationModelName";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
 
-            ifcPSE = new PropertySetEntry("SoftwareVersion");
-            ifcPSE.PropertyName = "SoftwareVersion";
+            ifcPSE = new PropertySetEntry("EvacuationModelVersion");
+            ifcPSE.PropertyName = "EvacuationModelVersion";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
-            ifcPSE = new PropertySetEntry("SoftwareVendor");
-            ifcPSE.PropertyName = "SoftwareVendor";
+            ifcPSE = new PropertySetEntry("EvacuationModelVendor");
+            ifcPSE.PropertyName = "EvacuationModelVendor";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
-            ifcPSE = new PropertySetEntry("SimulationSummary");
-            ifcPSE.PropertyName = "SimulationSummary";
+            ifcPSE = new PropertySetEntry("EvacuationSimulationBrief");
+            ifcPSE.PropertyName = "EvacuationSimulationBrief";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
@@ -160,21 +163,18 @@ namespace Revit.IFC.Export.Exporter
             propertySet.EntityTypes.Add(IFCEntityType.IfcSpace);
                                    
  
-            
-
-
-            ifcPSE = new PropertySetEntry("RSET");
-            ifcPSE.PropertyName = "RSET";
+            ifcPSE = new PropertySetEntry("EvacuationTime");
+            ifcPSE.PropertyName = "EvacuationTime";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
-            ifcPSE = new PropertySetEntry("InitialOccupantNumber");
-            ifcPSE.PropertyName = "InitialOccupantNumber";
+            ifcPSE = new PropertySetEntry("InitialOccupancyNumber");
+            ifcPSE.PropertyName = "InitialOccupancyNumber";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
-            ifcPSE = new PropertySetEntry("occupantCountHistory");
-            ifcPSE.PropertyName = "occupantCountHistory";
+            ifcPSE = new PropertySetEntry("OccupancyHistory");
+            ifcPSE.PropertyName = "OccupancyHistory";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
@@ -196,39 +196,39 @@ namespace Revit.IFC.Export.Exporter
             propertySet.EntityTypes.Add(IFCEntityType.IfcBuilding);
               
 
-            ifcPSE = new PropertySetEntry("MinWalkDistance");
-            ifcPSE.PropertyName = "MinWalkDistance";
+            ifcPSE = new PropertySetEntry("MinTravelDistance");
+            ifcPSE.PropertyName = "MinTravelDistance";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
-            ifcPSE = new PropertySetEntry("MaxWalkDistance");
-            ifcPSE.PropertyName = "MaxWalkDistance";
+            ifcPSE = new PropertySetEntry("MaxTravelDistance");
+            ifcPSE.PropertyName = "MaxTravelDistance";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
-            ifcPSE = new PropertySetEntry("AvgWalkDistance");
-            ifcPSE.PropertyName = "AvgWalkDistance";
+            ifcPSE = new PropertySetEntry("AverageTravelDistance");
+            ifcPSE.PropertyName = "AverageTravelDistance";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
-            ifcPSE = new PropertySetEntry("TotalRSET");
-            ifcPSE.PropertyName = "TotalRSET";
+            ifcPSE = new PropertySetEntry("EvacuationTimeOverall");
+            ifcPSE.PropertyName = "EvacuationTimeOverall";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
-            ifcPSE = new PropertySetEntry("AvgExitTime");
-            ifcPSE.PropertyName = "AvgExitTime";
+            ifcPSE = new PropertySetEntry("AverageEvacuationTime");
+            ifcPSE.PropertyName = "AverageEvacuationTime";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
-            ifcPSE = new PropertySetEntry("MinExitTime");
-            ifcPSE.PropertyName = "MinExitTime";
+            ifcPSE = new PropertySetEntry("MinEvacuationTime");
+            ifcPSE.PropertyName = "MinEvacuationTime";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
 
-            ifcPSE = new PropertySetEntry("TotalOccupantCountHistory");
-            ifcPSE.PropertyName = "TotalOccupantCountHistory";
+            ifcPSE = new PropertySetEntry("OccupancyHistoryOverall");
+            ifcPSE.PropertyName = "OccupancyHistoryOverall";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
@@ -277,13 +277,13 @@ namespace Revit.IFC.Export.Exporter
             propertySet.EntityTypes.Add(IFCEntityType.IfcDoor);
 
 
-            ifcPSE = new PropertySetEntry("isNormalyClosed");
-            ifcPSE.PropertyName = "isNormalyClosed";
+            ifcPSE = new PropertySetEntry("isAccessible");
+            ifcPSE.PropertyName = "isAccessible";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
-            ifcPSE = new PropertySetEntry("doorFlowrate");
-            ifcPSE.PropertyName = "doorFlowrate";
+            ifcPSE = new PropertySetEntry("RequiredDoorFlowrate");
+            ifcPSE.PropertyName = "RequiredDoorFlowrate";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
@@ -306,20 +306,20 @@ namespace Revit.IFC.Export.Exporter
             propertySet.EntityTypes.Add(IFCEntityType.IfcDoor);
 
 
-            ifcPSE = new PropertySetEntry("FirstIn");
-            ifcPSE.PropertyName = "FirstIn";
+            ifcPSE = new PropertySetEntry("FirstOccupantInTime");
+            ifcPSE.PropertyName = "FirstOccupantInTime";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
 
-            ifcPSE = new PropertySetEntry("LastOut");
-            ifcPSE.PropertyName = "LastOut";
+            ifcPSE = new PropertySetEntry("LastOccupantOutTime");
+            ifcPSE.PropertyName = "LastOccupantOutTime";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
 
-            ifcPSE = new PropertySetEntry("FlowAvg");
-            ifcPSE.PropertyName = "FlowAvg";
+            ifcPSE = new PropertySetEntry("AverageOccupantFlowrate");
+            ifcPSE.PropertyName = "AverageOccupantFlowrate";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
@@ -329,8 +329,8 @@ namespace Revit.IFC.Export.Exporter
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
-            ifcPSE = new PropertySetEntry("doorFlowHistory");
-            ifcPSE.PropertyName = "doorFlowHistory";
+            ifcPSE = new PropertySetEntry("DoorFlowrateHistory");
+            ifcPSE.PropertyName = "DoorFlowrateHistory";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
             
@@ -352,36 +352,17 @@ namespace Revit.IFC.Export.Exporter
             propertySet.Name = "Pset_BuildingOccupancyRequirements";
             propertySet.EntityTypes.Add(IFCEntityType.IfcBuilding);
 
-            ifcPSE = new PropertySetEntry("ReacTime");
-            ifcPSE.PropertyName = "ReacTime";
+            ifcPSE = new PropertySetEntry("PreEvacuationTime");
+            ifcPSE.PropertyName = "PreEvacuationTime";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
             // Occupant profiles 
-            ifcPSE = new PropertySetEntry("occupantProfile1");
-            ifcPSE.PropertyName = "occupantProfile1";
+            ifcPSE = new PropertySetEntry("OccupantProfilesList");
+            ifcPSE.PropertyName = "OccupantProfilesList";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
-
-            ifcPSE = new PropertySetEntry("occupantProfile2");
-            ifcPSE.PropertyName = "occupantProfile2";
-            ifcPSE.PropertyType = PropertyType.Text;
-            propertySet.AddEntry(ifcPSE);
-
-            ifcPSE = new PropertySetEntry("occupantProfile3");
-            ifcPSE.PropertyName = "occupantProfile3";
-            ifcPSE.PropertyType = PropertyType.Text;
-            propertySet.AddEntry(ifcPSE);
-
-            ifcPSE = new PropertySetEntry("occupantProfile4");
-            ifcPSE.PropertyName = "occupantProfile4";
-            ifcPSE.PropertyType = PropertyType.Text;
-            propertySet.AddEntry(ifcPSE);
-
-            ifcPSE = new PropertySetEntry("occupantProfile5");
-            ifcPSE.PropertyName = "occupantProfile5";
-            ifcPSE.PropertyType = PropertyType.Text;
-            propertySet.AddEntry(ifcPSE);
+                       
 
             if (ifcPSE != null)
             {
@@ -450,23 +431,23 @@ namespace Revit.IFC.Export.Exporter
 
 
 
-            ifcPSE = new PropertySetEntry("FirstIn");
-            ifcPSE.PropertyName = "FirstIn";
+            ifcPSE = new PropertySetEntry("FirstOccupantInTime");
+            ifcPSE.PropertyName = "FirstOccupantInTime";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
-            ifcPSE = new PropertySetEntry("LastOut");
-            ifcPSE.PropertyName = "LastOut";
+            ifcPSE = new PropertySetEntry("LastOccupantOutTime");
+            ifcPSE.PropertyName = "LastOccupantOutTime";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
-            ifcPSE = new PropertySetEntry("FlowAvg");
-            ifcPSE.PropertyName = "FlowAvg";
+            ifcPSE = new PropertySetEntry("AverageOccupantFlowrate");
+            ifcPSE.PropertyName = "AverageOccupantFlowrate";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
-            ifcPSE = new PropertySetEntry("occupantCountHistory");
-            ifcPSE.PropertyName = "occupantCountHistory";
+            ifcPSE = new PropertySetEntry("OccupancyHistory");
+            ifcPSE.PropertyName = "OccupancyHistory";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
