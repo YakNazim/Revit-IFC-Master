@@ -44,7 +44,9 @@ namespace Revit.IFC.Export.Exporter
             Init_Pset_SpaceCommon(commonPropertySets);
             Init_Pset_StairCommon(commonPropertySets);
             Init_Pset_StairEgressPerformanceInformation(commonPropertySets);
-
+            Init_Pset_BuildingStoreyCommon(commonPropertySets);
+            Init_Pset_BuildingFireSafetyRequirements(commonPropertySets);
+            Init_Pset_BuildingStoreyOccupancyRequirements(commonPropertySets);
 
             // Append the propertySets list
             propertySets.Add(commonPropertySets);
@@ -83,6 +85,77 @@ namespace Revit.IFC.Export.Exporter
 
              */
 
+            ifcPSE = new PropertySetEntry("OccupancyNumberSpace");
+            ifcPSE.PropertyName = "OccupancyNumberSpace";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("OccupancyNumberLimit");
+            ifcPSE.PropertyName = "OccupancyNumberLimit";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("AreaPerOccupantSpace");
+            ifcPSE.PropertyName = "AreaPerOccupantSpace";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("EgressCapacity");
+            ifcPSE.PropertyName = "EgressCapacity";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("EgressCapacityRequirement");
+            ifcPSE.PropertyName = "EgressCapacityRequirement";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("ExitCount");
+            ifcPSE.PropertyName = "ExitCount";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("ExitCountRequirement");
+            ifcPSE.PropertyName = "ExitCountRequirement";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("EgressPathTravelDistance");
+            ifcPSE.PropertyName = "EgressPathTravelDistance";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("EgressCapacityAdequate");
+            ifcPSE.PropertyName = "EgressCapacityAdequate";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("ExitCountAdequate");
+            ifcPSE.PropertyName = "ExitCountAdequate";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("EgressCapacityBalance");
+            ifcPSE.PropertyName = "EgressCapacityBalance";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("EgressPathTravelDistanceExcess");
+            ifcPSE.PropertyName = "EgressPathTravelDistanceExcess";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("OccupancyNumberExcess");
+            ifcPSE.PropertyName = "OccupancyNumberExcess";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("EgressComponentsPlacement");
+            ifcPSE.PropertyName = "EgressComponentsPlacement";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+  
 
 
             if (ifcPSE != null)
@@ -259,6 +332,22 @@ namespace Revit.IFC.Export.Exporter
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
+            // Built-in Revit
+           /* ifcPSE = new PropertySetEntry("OccupancyType");
+            ifcPSE.PropertyName = "OccupancyType";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("SprinklerProtection");
+            ifcPSE.PropertyName = "SprinklerProtection";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);*/
+
+            ifcPSE = new PropertySetEntry("EmergencyCommunication");
+            ifcPSE.PropertyName = "EmergencyCommunication";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
 
             if (ifcPSE != null)
             {
@@ -287,6 +376,22 @@ namespace Revit.IFC.Export.Exporter
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
+            // Builtin
+            /*ifcPSE = new PropertySetEntry("FireExit");
+            ifcPSE.PropertyName = "FireExit";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);*/
+
+            ifcPSE = new PropertySetEntry("DischargeExit");
+            ifcPSE.PropertyName = "DischargeExit";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("DimensionAdequate");
+            ifcPSE.PropertyName = "DimensionAdequate";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
 
             if (ifcPSE != null)
             {
@@ -295,7 +400,125 @@ namespace Revit.IFC.Export.Exporter
 
         }
 
+        public static void Init_Pset_BuildingStoreyCommon(IList<PropertySetDescription> commonPropertySets)
+        {
+            PropertySetEntry ifcPSE = null;
 
+            PropertySetDescription propertySet = new PropertySetDescription();
+            propertySet.Name = "Pset_BuildingStoreyCommon";
+            propertySet.EntityTypes.Add(IFCEntityType.IfcBuildingStorey);
+
+            // Built in
+            /*ifcPSE = new PropertySetEntry("EntranceLevel");
+            ifcPSE.PropertyName = "EntranceLevel";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);*/
+
+            
+
+
+            if (ifcPSE != null)
+            {
+                commonPropertySets.Add(propertySet);
+            }
+
+        }
+
+        public static void Init_Pset_BuildingStoreyOccupancyRequirements(IList<PropertySetDescription> commonPropertySets)
+        {
+            PropertySetEntry ifcPSE = null;
+
+            PropertySetDescription propertySet = new PropertySetDescription();
+            propertySet.Name = "Pset_BuildingStoreyOccupancyRequirements";
+            propertySet.EntityTypes.Add(IFCEntityType.IfcBuildingStorey);
+
+       
+
+            ifcPSE = new PropertySetEntry("OccupancyNumberStorey");
+            ifcPSE.PropertyName = "OccupancyNumberStorey";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("EgressCapacityStorey");
+            ifcPSE.PropertyName = "EgressCapacityStorey";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("EgressCapacityRequirementStorey");
+            ifcPSE.PropertyName = "EgressCapacityRequirementStorey";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("ExitCountStorey");
+            ifcPSE.PropertyName = "ExitCountStorey";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("ExitCountRequirementStorey");
+            ifcPSE.PropertyName = "ExitCountRequirementStorey";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("EgressCapacityAdequateStorey");
+            ifcPSE.PropertyName = "EgressCapacityAdequateStorey";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("ExitCountAdequateStorey");
+            ifcPSE.PropertyName = "ExitCountAdequateStorey";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("EgressCapacityBalanceStorey");
+            ifcPSE.PropertyName = "EgressCapacityBalanceStorey";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("StairCount");
+            ifcPSE.PropertyName = "StairCount";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("StairCapacity");
+            ifcPSE.PropertyName = "StairCapacity";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("StairCountRequirement");
+            ifcPSE.PropertyName = "StairCountRequirement";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("StairCapacityRequirement");
+            ifcPSE.PropertyName = "StairCapacityRequirement";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("StairCountAdequate");
+            ifcPSE.PropertyName = "StairCountAdequate";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("StairCapacityAdequate");
+            ifcPSE.PropertyName = "StairCapacityAdequate";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("StairCapacityBalance");
+            ifcPSE.PropertyName = "StairCapacityBalance";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            
+
+
+
+            if (ifcPSE != null)
+            {
+                commonPropertySets.Add(propertySet);
+            }
+
+        }
 
         public static void Init_Pset_DoorEgressPerformanceInformation(IList<PropertySetDescription> commonPropertySets)
         {
@@ -362,7 +585,56 @@ namespace Revit.IFC.Export.Exporter
             ifcPSE.PropertyName = "OccupantProfilesList";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
-                       
+
+
+
+            ifcPSE = new PropertySetEntry("OccupancyNumberBuilding");
+            ifcPSE.PropertyName = "OccupancyNumberBuilding";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("StairCountContinuity");
+            ifcPSE.PropertyName = "StairCountContinuity";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("StairCapacityContinuity");
+            ifcPSE.PropertyName = "StairCapacityContinuity";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("StairCapacityPerOccupant");
+            ifcPSE.PropertyName = "StairCapacityPerOccupant";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("EgressCapacityPerOccupant");
+            ifcPSE.PropertyName = "EgressCapacityPerOccupant";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("OccupancyNumberLimitSingleExitSpace");
+            ifcPSE.PropertyName = "OccupancyNumberLimitSingleExitSpace";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("EgressPathTravelDistanceLimitLowOccupancy");
+            ifcPSE.PropertyName = "EgressPathTravelDistanceLimitLowOccupancy";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("EgressPathTravelDistanceLimitHighOccupancy");
+            ifcPSE.PropertyName = "EgressPathTravelDistanceLimitHighOccupancy";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("EgressPathTravelDistanceLimit");
+            ifcPSE.PropertyName = "EgressPathTravelDistanceLimit";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+             
+
 
             if (ifcPSE != null)
             {
@@ -388,7 +660,15 @@ namespace Revit.IFC.Export.Exporter
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
-            
+            // Already included by default in Revit
+            /*
+            ifcPSE = new PropertySetEntry("Category");
+            ifcPSE.PropertyName = "Category";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);*/
+
+
+
             if (ifcPSE != null)
             {
                 commonPropertySets.Add(propertySet);
@@ -406,9 +686,23 @@ namespace Revit.IFC.Export.Exporter
             propertySet.EntityTypes.Add(IFCEntityType.IfcStair);
 
 
-
             ifcPSE = new PropertySetEntry("AdmittedProfiles");
             ifcPSE.PropertyName = "AdmittedProfiles";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("RiserHeightAdequate");
+            ifcPSE.PropertyName = "RiserHeightAdequate";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("TreadLengthAdequate");
+            ifcPSE.PropertyName = "TreadLengthAdequate";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("FireEgressStair");
+            ifcPSE.PropertyName = "FireEgressStair";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
 
@@ -460,7 +754,38 @@ namespace Revit.IFC.Export.Exporter
         }
 
 
-        
+        public static void Init_Pset_BuildingFireSafetyRequirements(IList<PropertySetDescription> commonPropertySets)
+        {
+
+            PropertySetEntry ifcPSE = null;
+
+            PropertySetDescription propertySet = new PropertySetDescription();
+            propertySet.Name = "Pset_BuildingFireSafetyRequirements";
+            propertySet.EntityTypes.Add(IFCEntityType.IfcBuilding);
+
+
+            ifcPSE = new PropertySetEntry("SprinklerProtectionRequirement");
+            ifcPSE.PropertyName = "SprinklerProtectionRequirement";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+            ifcPSE = new PropertySetEntry("SprinklerProtectionLacking");
+            ifcPSE.PropertyName = "SprinklerProtectionLacking";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
+             
+
+
+            if (ifcPSE != null)
+            {
+                commonPropertySets.Add(propertySet);
+            }
+
+        }
+
+
+
 
     }
 }
