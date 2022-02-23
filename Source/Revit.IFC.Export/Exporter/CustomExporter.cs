@@ -333,19 +333,19 @@ namespace Revit.IFC.Export.Exporter
             propertySet.AddEntry(ifcPSE);
 
             // Built-in Revit
-           /* ifcPSE = new PropertySetEntry("OccupancyType");
+            ifcPSE = new PropertySetEntry("OccupancyType");
             ifcPSE.PropertyName = "OccupancyType";
             ifcPSE.PropertyType = PropertyType.Text;
             propertySet.AddEntry(ifcPSE);
-
+           
             ifcPSE = new PropertySetEntry("SprinklerProtection");
             ifcPSE.PropertyName = "SprinklerProtection";
-            ifcPSE.PropertyType = PropertyType.Text;
-            propertySet.AddEntry(ifcPSE);*/
+            ifcPSE.PropertyType = PropertyType.Boolean;
+            propertySet.AddEntry(ifcPSE);
 
             ifcPSE = new PropertySetEntry("EmergencyCommunication");
             ifcPSE.PropertyName = "EmergencyCommunication";
-            ifcPSE.PropertyType = PropertyType.Text;
+            ifcPSE.PropertyType = PropertyType.Boolean;
             propertySet.AddEntry(ifcPSE);
 
 
