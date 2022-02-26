@@ -169,6 +169,11 @@ namespace Revit.IFC.Export.Exporter
             ifcPSE.PropertyType = PropertyType.Length;
             propertySet.AddEntry(ifcPSE);
 
+            ifcPSE = new PropertySetEntry("EgressPathTravelXYZ");
+            ifcPSE.PropertyName = "EgressPathTravelXYZ";
+            ifcPSE.PropertyType = PropertyType.Text;
+            propertySet.AddEntry(ifcPSE);
+
             ifcPSE = new PropertySetEntry("EgressCapacityAdequate");
             ifcPSE.PropertyName = "EgressCapacityAdequate";
             ifcPSE.PropertyType = PropertyType.Boolean;
