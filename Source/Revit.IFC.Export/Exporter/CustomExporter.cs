@@ -426,10 +426,10 @@ namespace Revit.IFC.Export.Exporter
             propertySet.AddEntry(ifcPSE);
 
             // Builtin
-            /*ifcPSE = new PropertySetEntry("FireExit");
+            ifcPSE = new PropertySetEntry("FireExit");
             ifcPSE.PropertyName = "FireExit";
-            ifcPSE.PropertyType = PropertyType.Text;
-            propertySet.AddEntry(ifcPSE);*/
+            ifcPSE.PropertyType = PropertyType.Boolean;
+            propertySet.AddEntry(ifcPSE);
 
             ifcPSE = new PropertySetEntry("DischargeExit");
             ifcPSE.PropertyName = "DischargeExit";

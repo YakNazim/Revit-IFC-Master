@@ -54,8 +54,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="RevitAPI">
-      <HintPath>C:\Program Files\Autodesk\Revit 2021\RevitAPI.dll</HintPath>
+    <Reference Include="RevitAPI, Version=21.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Autodesk\Revit 2022\RevitAPI.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -215,9 +217,15 @@
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(TargetPath)" "C:\ProgramData\Autodesk\Revit\Addins\2021\IFC master\" /F /R /Y /I
 xcopy "$(TargetDir)IFC*.xsd" "C:\ProgramData\Autodesk\Revit\Addins\2021\IFC master\" /F /R /Y /I
-xcopy "$(TargetDir)IFC*.exp" "C:\ProgramData\Autodesk\Revit\Addins\2021\IFC master\" /F /R /Y /I
+xcopy "$(TargetDir)IFC*.exp" "C:\ProgramData\Autodesk\Revit\Addins\2021\IFC master\" /F /R /Y /I 
 xcopy "$(TargetDir)IFC Shared Parameters*.txt" "C:\ProgramData\Autodesk\Revit\Addins\2021\IFC master\" /F /R /Y /I
 xcopy "$(TargetDir)IFCCertifiedEntitiesAndPSets.json" "C:\ProgramData\Autodesk\Revit\Addins\2021\IFC master\" /F /R /Y /I
+
+xcopy "$(TargetPath)" "C:\ProgramData\Autodesk\Revit\Addins\2022\IFC master\" /F /R /Y /I 
+xcopy "$(TargetDir)IFC*.xsd" "C:\ProgramData\Autodesk\Revit\Addins\2022\IFC master\" /F /R /Y /I
+ xcopy "$(TargetDir)IFC*.exp" "C:\ProgramData\Autodesk\Revit\Addins\2022\IFC master\" /F /R /Y /I
+ xcopy "$(TargetDir)IFC Shared Parameters*.txt" "C:\ProgramData\Autodesk\Revit\Addins\2022\IFC master\" /F /R /Y /I
+ xcopy "$(TargetDir)IFCCertifiedEntitiesAndPSets.json" "C:\ProgramData\Autodesk\Revit\Addins\2022\IFC master\" /F /R /Y /I
 </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
