@@ -42,4 +42,13 @@ The solution and its sub projects are already configured but ensure your local e
 **Note 4** : Do not forget to add the assembly dlls for the dependecies (please refer to the installation package of the release - see above).
 
 ## Code reference
-An overview of the code is given in [this wiki](https://github.com/YakNazim/Evac4Bim/wiki/Code-reference)
+- The main entry point for IFC exporter is Revit.IFC.Export.Exporter namespace
+- In order to enable exporting additional property sets not supported natively by Revit, a delegate is used : 
+
+```C#
+protected PropertySetsToExport m_PropertySetsToExport = CustomExporter.InitCustomPropertySet;
+```
+
+![Capture d’écran 2022-04-17 001824](https://user-images.githubusercontent.com/17513670/163692998-a87b2bda-9fbd-4831-b9c2-d274f937f2aa.png)
+
+ - The implementation of the derived class can be found under **Revit.IFC.Export.Exporter.CustomExporter.cs**
