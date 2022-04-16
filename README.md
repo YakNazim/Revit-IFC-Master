@@ -21,15 +21,14 @@ The solution and its sub projects are already configured but ensure your local e
 >
 >   - In the project solution, ensure the path to each referenced dll is correct (do this for every sub project)
 >
->![Capture d’écran 2022-04-16 162949](https://user-images.githubusercontent.com/17513670/163678998-a78af818-25ef-409e-8a3d-ca9640ff2a17.png)
->
+> ![Capture d’écran 2022-04-16 235525](https://user-images.githubusercontent.com/17513670/163692547-ccfdae80-41ef-4c95-b4b8-9defbf3259a0.png)>>
 >   - If the target path does not match the local installation folder of Revit, you can add the reference manually and overwrite the previous one.   
 >
->![Picture1](https://user-images.githubusercontent.com/17513670/163679735-1c87aed4-0099-4167-a219-0dc156930e13.png)
+> ![Picture1](https://user-images.githubusercontent.com/17513670/163692737-dfbb7fdf-b91e-4da8-9455-3298f439e5eb.png)
 >
 >   - In addition to that, you need to install the following dependencies from NuGet
 >
->![image](https://user-images.githubusercontent.com/17513670/163692337-ca7f5f55-6fe6-48d7-911a-614d89421fe6.png)
+> ![image](https://user-images.githubusercontent.com/17513670/163692337-ca7f5f55-6fe6-48d7-911a-614d89421fe6.png)
 >
 - Once you setup the environment, build the solution 
 - To deploy the solution, copy the assemblies into Revit's addin folder e.g C:\ProgramData\Autodesk\Revit\Addins\2022
