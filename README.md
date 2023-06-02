@@ -17,6 +17,8 @@ The solution and its sub projects are already configured but ensure your local e
 
 >   - .NET FRAMEWORK version 4.8 in Visual Studio
 >
+>   - Wix toolset, version 3 (https://marketplace.visualstudio.com/items?itemName=WixToolset.WiXToolset)
+>   
 >   - A local installation of Autodesk Revit (since the solution references several dll files from it) 
 >
 >   - In the project solution, ensure the path to each referenced dll is correct (do this for every sub project)
