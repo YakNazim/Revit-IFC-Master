@@ -43,7 +43,7 @@ The solution and its sub projects are already configured but ensure your local e
 
 **Note 4** : Do not forget to add the assembly dlls for the dependecies (please refer to the installation package of the release - see above).
 
-**Note 5** : If you get a build error: "The type or namespace name 'XXXXXX' could not be found", nthen you may need to force a package update. You need use the NuGet command line in the Package Manager Console: "Update-Package -reinstall".
+**Note 5** : If you get a build error: "The type or namespace name 'XXXXXX' could not be found", then you may need to force a package update. You need use the NuGet command line in the Package Manager Console: "Update-Package -reinstall".
 
 ## Code reference
 - The main entry point for IFC exporter is Revit.IFC.Export.Exporter namespace
